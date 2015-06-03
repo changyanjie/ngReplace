@@ -14,7 +14,7 @@
 
     var m = angular.module('ngReplace', []);
 
-    m.factory('replaceWith',['$compile','$http',
+    m.factory('replaceWithTpl',['$compile','$http',
         function($compile,$http){
 
             var replaceTpl = function(replaceTpl,replaceId,scope){
@@ -39,13 +39,7 @@
                 var replaceTpl = attrs.replaceTpl,
                     replaceId = attrs.replaceId;
 
-                replaceWith.template(replaceTpl,replaceId,scope);
-                //$http.get(replaceTpl, {cache: true}).then(function (response) {
-                //    var replaceDom = angular.element('#' + replaceId);
-                //
-                //    replaceDom.html(response.data);
-                //    $compile(replaceDom.contents())(scope);
-                //});
+                replaceWithTpl.template(replaceTpl,replaceId,scope);
             })
         };
 
